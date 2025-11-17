@@ -5,6 +5,14 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Color palette variables */
+    --color-nav: #272829; /* navigation background / primary dark */
+    --color-accent: #61677A; /* secondary / muted */
+    --color-bg: #D8D9DA; /* page background */
+    --color-highlight: #FFF6E0; /* highlights / CTA */
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -12,6 +20,8 @@
   body {
     @apply font-sans antialiased;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-nav);
   }
 }
 

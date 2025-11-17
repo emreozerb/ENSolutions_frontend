@@ -29,14 +29,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900">
+    <div className="min-h-screen">
       <div className="flex items-center justify-center px-6 pt-32 pb-20">
         <div className="max-w-4xl mx-auto w-full">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-light text-white mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-light text-[#272829] mb-8 tracking-tight">
             Klaar om te groeien?
           </h1>
-          <p className="text-gray-300 text-xl md:text-2xl font-light leading-relaxed">
+          <p className="text-[#61677A] text-xl md:text-2xl font-light leading-relaxed">
             Laten we samen werken aan jouw volgende stap
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Naam"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-4 px-0 focus:border-blue-400 outline-none transition-colors placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-4 px-0 focus:border-blue-400 outline-none transition-colors placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
             />
           </div>
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
               required
               rows={5}
               placeholder="Bericht"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-4 px-0 focus:border-blue-400 outline-none transition-colors resize-none placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors resize-none placeholder-[#61677A]"
             />
           </div>
 
@@ -91,31 +91,31 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-block bg-white text-slate-900 px-16 py-4 text-lg font-normal hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 rounded"
+              className="inline-block bg-[#272829] text-[#FFF6E0] px-16 py-4 text-lg font-normal hover:brightness-105 transition-all duration-300 disabled:opacity-50 rounded"
             >
               {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
             </button>
           </div>
         </form>
 
-        <div className="text-center space-y-8 text-gray-300 border-t border-slate-700 pt-12">
+        <div className="text-center space-y-8 text-[#61677A] border-t border-[#61677A] pt-12">
           <div>
             <p className="text-sm text-gray-400 mb-4">We antwoorden binnen 24 uur</p>
             <a
               href="mailto:ensolutionsbe@hotmail.com"
-              className="text-xl hover:text-white transition-colors"
+              className="text-xl hover:text-[#272829] transition-colors"
             >
               ensolutionsbe@hotmail.com
             </a>
           </div>
 
           <div className="flex items-center justify-center gap-2">
-            <MapPin size={20} className="text-gray-500" />
+            <MapPin size={20} className="text-[#61677A]" />
             <a
               href="https://maps.app.goo.gl/iymS8pvgwYjtzJss8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white transition-colors"
+              className="text-[#61677A] hover:text-[#272829] transition-colors"
             >
               Bekijk onze locatie
             </a>

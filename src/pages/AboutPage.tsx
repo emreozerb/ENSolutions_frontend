@@ -3,14 +3,14 @@ import Footer from '../components/Footer';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900">
+    <div className="min-h-screen">
       <section className="min-h-screen flex items-center justify-center px-6 pt-32 pb-20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-light mb-12 tracking-tight text-white">
+            <h1 className="text-5xl md:text-7xl font-light mb-12 tracking-tight text-[#272829]">
               Wij zijn ENSolutions
             </h1>
-            <div className="space-y-8 text-gray-300 text-xl md:text-2xl font-light leading-relaxed">
+            <div className="space-y-8 text-[#61677A] text-xl md:text-2xl font-light leading-relaxed">
               <p>
                 Een jong, dynamisch team gespecialiseerd in digitale groei.
               </p>
@@ -28,8 +28,8 @@ export default function AboutPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="text-gray-300 space-y-6">
-              <h3 className="text-3xl font-light text-white mb-4">Onze missie</h3>
+            <div className="text-[#61677A] space-y-6">
+              <h3 className="text-3xl font-light text-[#272829] mb-4">Onze missie</h3>
               <p className="text-lg leading-relaxed">
                 We bouwen stap voor stap aan een sterk merk. Elke klant, groot of klein, krijgt onze volle aandacht.
               </p>

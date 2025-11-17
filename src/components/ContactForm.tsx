@@ -27,9 +27,9 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="py-20 bg-gradient-to-b from-slate-900 to-slate-800">
+    <div className="py-20">
       <div className="max-w-2xl mx-auto px-6">
-        <h3 className="text-3xl md:text-4xl font-light text-white mb-8 text-center">
+        <h3 className="text-3xl md:text-4xl font-light text-[#272829] mb-8 text-center">
           Neem contact op – vrijblijvend
         </h3>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -42,7 +42,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               placeholder="Naam"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-3 px-0 focus:border-blue-400 outline-none transition-colors placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
             />
           </div>
 
@@ -55,7 +55,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-3 px-0 focus:border-blue-400 outline-none transition-colors placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
             />
           </div>
 
@@ -68,7 +68,7 @@ export default function ContactForm() {
               required
               rows={4}
               placeholder="Bericht"
-              className="w-full bg-transparent border-b border-slate-600 text-white text-lg py-3 px-0 focus:border-blue-400 outline-none transition-colors resize-none placeholder-slate-500"
+              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors resize-none placeholder-[#61677A]"
             />
           </div>
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-block bg-white text-slate-900 px-12 py-3 text-base font-normal hover:bg-slate-200 transition-all duration-300 disabled:opacity-50 rounded"
+              className="inline-block bg-[#272829] text-[#FFF6E0] px-12 py-3 text-base font-normal hover:brightness-110 transition-all duration-300 disabled:opacity-50 rounded"
             >
               {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
             </button>
