@@ -36,14 +36,14 @@ export default function ProjectsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-900">
+    <div className="min-h-screen bg-[#f8fafc]">
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h1 className="text-5xl md:text-7xl font-light text-white mb-8 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-light text-[#1a1a2e] mb-8 tracking-tight">
               Ons werk
             </h1>
-            <p className="text-gray-300 text-xl md:text-2xl font-light">
+            <p className="text-[#0f3460] text-xl md:text-2xl font-light">
               Projecten waar we trots op zijn
             </p>
           </div>
@@ -52,15 +52,15 @@ export default function ProjectsPage() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg aspect-video cursor-pointer bg-slate-800"
+                className="group relative overflow-hidden rounded-2xl aspect-video cursor-pointer bg-white shadow-lg hover:shadow-2xl transition-all duration-500"
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <p className="text-blue-400 text-sm font-light uppercase tracking-wider mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                  <p className="text-[#e94560] text-sm font-semibold uppercase tracking-wider mb-2">
                     {project.category}
                   </p>
                   <h3 className="text-2xl font-light text-white">{project.title}</h3>

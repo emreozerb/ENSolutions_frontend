@@ -36,7 +36,7 @@ export default function Navigation() {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/projects', label: 'Werk' },
+    { path: '/about', label: 'Over Ons' },
     { path: '/contact', label: 'Contact' },
   ];
 
@@ -52,9 +52,9 @@ export default function Navigation() {
     <nav
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled 
-          ? 'bg-[#272829] py-6 shadow-lg' 
-          : 'bg-[#272829] py-12'
+        isScrolled
+          ? 'bg-black py-6 shadow-lg'
+          : 'bg-black py-12'
       }`}
       style={{
         borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
@@ -79,11 +79,8 @@ export default function Navigation() {
           <Link
             to="/"
             className={`text-lg md:text-xl font-light transition-all duration-300 tracking-[0.12em] uppercase relative group ${
-              location.pathname === '/' ? 'text-[#FFF6E0]' : 'text-[#61677A] hover:text-[#FFF6E0]'
+              location.pathname === '/' ? 'text-white' : 'text-gray-400 hover:text-white'
             }`}
-            style={{
-              textShadow: location.pathname === '/' ? '0 0 10px rgba(255, 246, 224, 0.25)' : 'none',
-            }}
           >
             Home
             <span 
@@ -94,35 +91,32 @@ export default function Navigation() {
           </Link>
 
           {/* Services Dropdown */}
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setIsServicesDropdownOpen(true)}
             onMouseLeave={() => setIsServicesDropdownOpen(false)}
           >
-            <button
-              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+            <Link
+              to="/services"
               className={`text-lg md:text-xl font-light transition-all duration-300 tracking-[0.12em] uppercase flex items-center gap-2 ${
-                location.pathname.includes('/services') ? 'text-[#FFF6E0]' : 'text-[#61677A] hover:text-[#FFF6E0]'
+                location.pathname.includes('/services') ? 'text-white' : 'text-gray-400 hover:text-white'
               }`}
             >
               Diensten
               <ChevronDown size={16} className={`transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+            </Link>
 
             {/* Dropdown Menu */}
-            <div 
-              className={`absolute top-full left-0 mt-2 w-56 bg-[#272829] border border-[#61677A] rounded-lg shadow-lg transition-all duration-300 z-50 ${
+            <div
+              className={`absolute top-full left-0 mt-2 w-56 bg-[#1a1a1a] border border-gray-700 rounded-lg shadow-lg transition-all duration-300 z-50 ${
                 isServicesDropdownOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
               }`}
             >
-              <Link to="/services" className="block px-4 py-3 text-[#FFF6E0] hover:bg-[#61677A]/10 transition-all font-semibold border-b border-[#61677A]">
-                Alle diensten
-              </Link>
               {services.map((service) => (
                 <Link
                   key={service.path}
                   to={service.path}
-                  className="block px-4 py-3 text-[#61677A] hover:text-[#FFF6E0] hover:bg-[#61677A]/10 transition-all border-b border-[#61677A] last:border-b-0 last:rounded-b-lg"
+                  className="block px-4 py-3 text-gray-400 hover:text-white hover:bg-gray-800 transition-all border-b border-gray-700 last:border-b-0 last:rounded-b-lg"
                   onClick={() => setIsServicesDropdownOpen(false)}
                 >
                   {service.label}
@@ -131,20 +125,17 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Werk Link */}
+          {/* Over Ons Link */}
           <Link
-            to="/projects"
+            to="/about"
             className={`text-lg md:text-xl font-light transition-all duration-300 tracking-[0.12em] uppercase relative group ${
-              location.pathname === '/projects' ? 'text-[#FFF6E0]' : 'text-[#61677A] hover:text-[#FFF6E0]'
+              location.pathname === '/about' ? 'text-white' : 'text-gray-400 hover:text-white'
             }`}
-            style={{
-              textShadow: location.pathname === '/projects' ? '0 0 10px rgba(255, 246, 224, 0.25)' : 'none',
-            }}
           >
-            Werk
-            <span 
+            Over Ons
+            <span
               className={`absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent transition-all duration-300 ${
-                location.pathname === '/projects' ? 'w-full opacity-50' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-30'
+                location.pathname === '/about' ? 'w-full opacity-50' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-30'
               }`}
             />
           </Link>
@@ -153,14 +144,11 @@ export default function Navigation() {
           <Link
             to="/contact"
             className={`text-lg md:text-xl font-light transition-all duration-300 tracking-[0.12em] uppercase relative group ${
-              location.pathname === '/contact' ? 'text-[#FFF6E0]' : 'text-[#61677A] hover:text-[#FFF6E0]'
+              location.pathname === '/contact' ? 'text-white' : 'text-gray-400 hover:text-white'
             }`}
-            style={{
-              textShadow: location.pathname === '/contact' ? '0 0 10px rgba(255, 246, 224, 0.25)' : 'none',
-            }}
           >
             Contact
-            <span 
+            <span
               className={`absolute -bottom-2 left-0 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent transition-all duration-300 ${
                 location.pathname === '/contact' ? 'w-full opacity-50' : 'w-0 opacity-0 group-hover:w-full group-hover:opacity-30'
               }`}
@@ -171,7 +159,7 @@ export default function Navigation() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-[#FFF6E0] hover:text-[#D8D9DA] transition-colors duration-300 p-2"
+          className="md:hidden text-white hover:text-gray-300 transition-colors duration-300 p-2"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={44} strokeWidth={1} /> : <Menu size={44} strokeWidth={1} />}
@@ -180,11 +168,8 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div 
-          className="md:hidden bg-[#272829] border-t"
-          style={{
-            borderColor: 'rgba(255, 255, 255, 0.05)',
-          }}
+        <div
+          className="md:hidden bg-black border-t border-gray-700"
         >
           <div className="container mx-auto px-8 py-12 flex flex-col space-y-8">
             {navItems.map((item) => (
@@ -192,30 +177,27 @@ export default function Navigation() {
                 key={item.path}
                 to={item.path}
                 className={`font-light text-left tracking-[0.12em] uppercase text-lg md:text-xl transition-all duration-300 ${
-                  location.pathname === item.path ? 'text-[#FFF6E0]' : 'text-[#61677A] hover:text-[#FFF6E0]'
+                  location.pathname === item.path ? 'text-white' : 'text-gray-400 hover:text-white'
                 }`}
-                style={{
-                  textShadow: location.pathname === item.path ? '0 0 10px rgba(255, 246, 224, 0.25)' : 'none',
-                }}
               >
                 {item.label}
               </Link>
             ))}
 
             {/* Mobile Services Menu */}
-            <div className="border-t border-[#61677A] pt-8">
+            <div className="border-t border-gray-700 pt-8">
               <Link
                 to="/services"
-                className="font-light text-left tracking-[0.12em] uppercase text-lg md:text-xl text-[#FFF6E0] block mb-6"
+                className="font-light text-left tracking-[0.12em] uppercase text-lg md:text-xl text-white block mb-6"
               >
-                Alle Diensten
+                Diensten
               </Link>
               <div className="flex flex-col space-y-4 pl-4">
                 {services.map((service) => (
                   <Link
                     key={service.path}
                     to={service.path}
-                    className="font-light text-left tracking-[0.1em] text-[#61677A] hover:text-[#FFF6E0] transition-all"
+                    className="font-light text-left tracking-[0.1em] text-gray-400 hover:text-white transition-all"
                   >
                     {service.label}
                   </Link>

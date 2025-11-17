@@ -123,7 +123,7 @@ export default function Contact() {
 
         <div className="mt-32 text-center">
           <img
-            src="/EN solutions logo.png"
+            src="Logo_Dark.png"
             alt="ENSolutions"
             className="w-48 mx-auto mb-8 opacity-80"
           />

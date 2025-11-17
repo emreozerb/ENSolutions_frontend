@@ -2,7 +2,7 @@ import { MapPin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#272829] border-t border-slate-800">
+    <footer className="bg-black border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 text-center">
+        <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-500 text-sm">
             © 2025 ENSolutions. Alle rechten voorbehouden.
           </p>

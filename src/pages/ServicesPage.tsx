@@ -37,36 +37,36 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8fafc]">
       {/* Hero Section */}
       <section className="pt-40 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-light text-[#272829] mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-light text-[#1a1a2e] mb-8 tracking-tight opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
             Onze diensten
           </h1>
-          <p className="text-xl text-[#61677A] leading-relaxed">
+          <p className="text-xl text-[#0f3460] leading-relaxed opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards]">
             Vijf manieren waarop we jouw bedrijf naar een hoger niveau tillen. Kies de dienst die bij jou past, of combineer ze voor een complete aanpak.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 px-6">
+      <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {services.map((service) => (
               <Link
                 key={service.id}
                 to={service.link}
-                className="group p-8 rounded-3xl bg-[#FFF6E0] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group p-8 rounded-3xl bg-white border-2 border-[#61677A]/20 shadow-lg hover:shadow-2xl hover:border-[#61677A]/50 transition-all duration-300 hover:-translate-y-3 hover:scale-105"
               >
-                <h3 className="text-2xl font-semibold text-[#272829] mb-4">
+                <h3 className="text-2xl font-semibold text-[#1a1a2e] mb-4">
                   {service.title}
                 </h3>
-                <p className="text-[#61677A] leading-relaxed mb-6">
+                <p className="text-[#0f3460] leading-relaxed mb-6">
                   {service.shortDesc}
                 </p>
-                <span className="inline-block text-[#272829] font-light group-hover:translate-x-2 transition-transform duration-300">
+                <span className="inline-block text-[#61677A] font-semibold group-hover:translate-x-2 transition-transform duration-300">
                   Meer informatie →
                 </span>
               </Link>

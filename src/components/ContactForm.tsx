@@ -27,9 +27,9 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="py-20">
+    <div className="py-20 bg-gradient-to-b from-[#f8fafc] to-white">
       <div className="max-w-2xl mx-auto px-6">
-        <h3 className="text-3xl md:text-4xl font-light text-[#272829] mb-8 text-center">
+        <h3 className="text-3xl md:text-4xl font-light text-[#1a1a2e] mb-8 text-center">
           Neem contact op – vrijblijvend
         </h3>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -42,7 +42,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               placeholder="Naam"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-3 px-0 focus:border-[#61677A] outline-none transition-colors placeholder-[#94a3b8]"
             />
           </div>
 
@@ -55,7 +55,7 @@ export default function ContactForm() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-3 px-0 focus:border-[#61677A] outline-none transition-colors placeholder-[#94a3b8]"
             />
           </div>
 
@@ -68,12 +68,12 @@ export default function ContactForm() {
               required
               rows={4}
               placeholder="Bericht"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-3 px-0 focus:border-[#272829] outline-none transition-colors resize-none placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-3 px-0 focus:border-[#61677A] outline-none transition-colors resize-none placeholder-[#94a3b8]"
             />
           </div>
 
           {submitStatus === 'success' && (
-            <div className="text-green-400 text-center py-3">
+            <div className="text-[#61677A] text-center py-3 font-semibold">
               Bedankt! We antwoorden binnen 24 uur.
             </div>
           )}
@@ -82,7 +82,7 @@ export default function ContactForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-block bg-[#272829] text-[#FFF6E0] px-12 py-3 text-base font-normal hover:brightness-110 transition-all duration-300 disabled:opacity-50 rounded"
+              className="inline-block bg-gradient-to-r from-[#61677A] to-[#1a1a2e] text-white px-12 py-3 text-base font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 disabled:opacity-50 rounded-lg"
             >
               {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
             </button>

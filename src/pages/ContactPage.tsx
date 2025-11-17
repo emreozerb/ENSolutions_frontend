@@ -29,19 +29,19 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#f8fafc]">
       <div className="flex items-center justify-center px-6 pt-32 pb-20">
         <div className="max-w-4xl mx-auto w-full">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-7xl font-light text-[#272829] mb-8 tracking-tight">
+        <div className="text-center mb-20">
+          <h1 className="text-5xl md:text-7xl font-light text-[#1a1a2e] mb-8 tracking-tight opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
             Klaar om te groeien?
           </h1>
-          <p className="text-[#61677A] text-xl md:text-2xl font-light leading-relaxed">
+          <p className="text-[#0f3460] text-xl md:text-2xl font-light leading-relaxed opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards]">
             Laten we samen werken aan jouw volgende stap
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-8 mb-16">
+        <form onSubmit={handleSubmit} className="space-y-8 mb-20 bg-white p-8 md:p-12 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
           <div>
             <input
               type="text"
@@ -51,7 +51,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Naam"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-4 px-0 focus:border-[#61677A] outline-none transition-colors placeholder-[#94a3b8]"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
               onChange={handleChange}
               required
               placeholder="Email"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-4 px-0 focus:border-[#61677A] outline-none transition-colors placeholder-[#94a3b8]"
             />
           </div>
 
@@ -77,12 +77,12 @@ export default function ContactPage() {
               required
               rows={5}
               placeholder="Bericht"
-              className="w-full bg-transparent border-b border-[#61677A] text-[#272829] text-lg py-4 px-0 focus:border-[#272829] outline-none transition-colors resize-none placeholder-[#61677A]"
+              className="w-full bg-transparent border-b-2 border-[#94a3b8] text-[#1a1a2e] text-lg py-4 px-0 focus:border-[#61677A] outline-none transition-colors resize-none placeholder-[#94a3b8]"
             />
           </div>
 
           {submitStatus === 'success' && (
-            <div className="text-green-400 text-center py-4">
+            <div className="text-[#61677A] text-center py-4 font-semibold">
               Bedankt! We antwoorden binnen 24 uur.
             </div>
           )}
@@ -91,19 +91,19 @@ export default function ContactPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="inline-block bg-[#272829] text-[#FFF6E0] px-16 py-4 text-lg font-normal hover:brightness-105 transition-all duration-300 disabled:opacity-50 rounded"
+              className="inline-block bg-gradient-to-r from-[#61677A] to-[#1a1a2e] text-white px-16 py-4 text-lg font-semibold hover:shadow-2xl transform hover:scale-110 transition-all duration-300 disabled:opacity-50 rounded-lg"
             >
               {isSubmitting ? 'Verzenden...' : 'Verstuur bericht'}
             </button>
           </div>
         </form>
 
-        <div className="text-center space-y-8 text-[#61677A] border-t border-[#61677A] pt-12">
+        <div className="text-center space-y-8 text-[#0f3460] border-t-2 border-[#61677A]/30 pt-12">
           <div>
-            <p className="text-sm text-gray-400 mb-4">We antwoorden binnen 24 uur</p>
+            <p className="text-sm text-[#94a3b8] mb-4">We antwoorden binnen 24 uur</p>
             <a
               href="mailto:ensolutionsbe@hotmail.com"
-              className="text-xl hover:text-[#272829] transition-colors"
+              className="text-xl hover:text-[#61677A] transition-colors font-semibold"
             >
               ensolutionsbe@hotmail.com
             </a>
@@ -115,7 +115,7 @@ export default function ContactPage() {
               href="https://maps.app.goo.gl/iymS8pvgwYjtzJss8"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#61677A] hover:text-[#272829] transition-colors"
+              className="text-[#0f3460] hover:text-[#61677A] transition-colors"
             >
               Bekijk onze locatie
             </a>
@@ -128,7 +128,7 @@ export default function ContactPage() {
             alt="ENSolutions"
             className="w-48 mx-auto mb-6 opacity-80"
           />
-          <p className="text-gray-500 text-sm tracking-widest">
+          <p className="text-[#94a3b8] text-sm tracking-widest">
             Websites. Reclame. Groei.
           </p>
         </div>
