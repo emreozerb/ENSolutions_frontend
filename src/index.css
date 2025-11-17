@@ -11,10 +11,16 @@
     --color-accent: #61677A; /* secondary / muted */
     --color-bg: #D8D9DA; /* page background */
     --color-highlight: #FFF6E0; /* highlights / CTA */
+    /* Safe offset for fixed navigation to avoid hiding anchored content */
+    --nav-scroll-offset: 8rem;
+    /* Actual measured navigation height (updated at runtime) */
+    --nav-height: 8rem;
   }
 
   html {
     scroll-behavior: smooth;
+    /* Ensure fragment/anchor navigation leaves space for fixed nav */
+    scroll-padding-top: var(--nav-scroll-offset);
   }
 
   body {
@@ -22,6 +28,18 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     background-color: var(--color-bg);
     color: var(--color-nav);
+  }
+
+  /* Make headings and sections respect the navigation offset when navigated to via anchors */
+  h1, h2, h3, section {
+    scroll-margin-top: var(--nav-scroll-offset);
+  }
+
+  /* Prevent the fixed navigation from overlapping page content by adding top padding
+     that matches the navigation height. The value is updated dynamically by
+     Navigation.tsx (sets --nav-height). */
+  body {
+    padding-top: var(--nav-height);
   }
 }
 

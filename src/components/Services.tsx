@@ -1,5 +1,3 @@
-import { ChevronRight } from 'lucide-react';
-
 export default function Services() {
   return (
     <section id="services" className="bg-dark-800">
