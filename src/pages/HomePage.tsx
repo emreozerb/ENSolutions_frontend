@@ -12,68 +12,94 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
+      {/* Hero Section with background image */}
+      <section 
+        className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/working.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
         <div className="relative z-10 text-center max-w-6xl mx-auto">
           <div className={`transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h1 className="text-4xl md:text-6xl font-light text-[#272829] mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
               Laat je bedrijf groeien met visuele impact
             </h1>
-            <p className="text-xl md:text-2xl text-[#61677A] font-light mb-8">
+            <p className="text-xl md:text-2xl text-white/90 font-light mb-8 drop-shadow-md">
               Van strategie tot resultaat — wij maken jouw merk zichtbaar en onvergetelijk.
             </p>
           </div>
         </div>
 
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
-          <ChevronDown size={40} strokeWidth={1} className="text-gray-400" />
+          <ChevronDown size={40} strokeWidth={1} className="text-white/60" />
         </div>
       </section>
 
-      {/* Introduction Section */}
+      {/* Introduction Section with image */}
       <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-light text-[#272829] mb-8">
-            Jouw partner in digitale groei
-          </h2>
-          <p className="text-xl text-[#61677A] leading-relaxed">
-            We helpen bedrijven om op te vallen, te groeien en te blijven hangen in het hoofd van hun doelgroep. 
-            Met videografie die vertelt, websites die converteren, branding die onderscheidt en reclame die werkt, 
-            tillen we jouw bedrijf naar een hoger niveau.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-light text-[#272829] mb-8">
+                Jouw partner in digitale groei
+              </h2>
+              <p className="text-xl text-[#61677A] leading-relaxed">
+                We helpen bedrijven om op te vallen, te groeien en te blijven hangen in het hoofd van hun doelgroep. 
+                Met videografie die vertelt, websites die converteren, branding die onderscheidt en reclame die werkt, 
+                tillen we jouw bedrijf naar een hoger niveau.
+              </p>
+            </div>
+            <div>
+              <img src="/office.jpg" alt="Office teamwork" className="w-full rounded-2xl shadow-2xl object-cover h-96" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Services Section */}
-  <section className="py-24 px-6">
+  <section className="py-24 px-6 bg-gradient-to-b from-transparent to-[#FFF6E0]/5">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-light text-[#272829] mb-16 text-center">
             Wat we doen
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start">
-              <h3 className="text-2xl font-semibold text-[#272829] mb-4 flex items-center">🎥 <span className="ml-2 text-[#61677A]">Videografie & Marketing</span></h3>
-              <p className="text-[#61677A] leading-relaxed text-lg">
-                Krachtige video's die jouw verhaal vertellen en jouw publiek raken. Van bedrijfsfilms tot social media content — visueel, boeiend en klaar om te delen.
-              </p>
+            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start relative overflow-hidden">
+              <img src="/photo-videography.jpg" alt="Photo and Videography" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#272829] to-[#61677A] flex items-center justify-center text-white text-3xl mb-4">🎥</div>
+                <h3 className="text-2xl font-semibold text-[#272829] mb-4">Videografie & Marketing</h3>
+                <p className="text-[#61677A] leading-relaxed text-lg">
+                  Krachtige video's die jouw verhaal vertellen en jouw publiek raken. Van bedrijfsfilms tot social media content — visueel, boeiend en klaar om te delen.
+                </p>
+              </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start">
-              <h3 className="text-2xl font-semibold text-[#272829] mb-4 flex items-center">💻 <span className="ml-2 text-[#61677A]">Websites die werken</span></h3>
-              <p className="text-[#61677A] leading-relaxed text-lg">
-                Responsieve websites die er op elk apparaat perfect uitzien. Gebruiksvriendelijk ontworpen, intuïtief in gebruik en volledig toegankelijk voor iedereen. Snel, modern en afgestemd op jouw doelgroep.
-              </p>
+            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start relative overflow-hidden">
+              <img src="/webdesign.jpg" alt="Web design" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#272829] to-[#61677A] flex items-center justify-center text-white text-3xl mb-4">💻</div>
+                <h3 className="text-2xl font-semibold text-[#272829] mb-4">Websites die werken</h3>
+                <p className="text-[#61677A] leading-relaxed text-lg">
+                  Responsieve websites die er op elk apparaat perfect uitzien. Gebruiksvriendelijk ontworpen, intuïtief in gebruik en volledig toegankelijk voor iedereen. Snel, modern en afgestemd op jouw doelgroep.
+                </p>
+              </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start">
-              <h3 className="text-2xl font-semibold text-[#272829] mb-4 flex items-center">🎨 <span className="ml-2 text-[#61677A]">Branding die blijft plakken</span></h3>
-              <p className="text-[#61677A] leading-relaxed text-lg">
-                Een sterke merkidentiteit die jouw bedrijf onderscheidt. Van logo tot huisstijl — we zorgen dat je herkend en onthouden wordt.
-              </p>
+            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start relative overflow-hidden">
+              <img src="/branding.jpg" alt="Branding" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#272829] to-[#61677A] flex items-center justify-center text-white text-3xl mb-4">🎨</div>
+                <h3 className="text-2xl font-semibold text-[#272829] mb-4">Branding die blijft plakken</h3>
+                <p className="text-[#61677A] leading-relaxed text-lg">
+                  Een sterke merkidentiteit die jouw bedrijf onderscheidt. Van logo tot huisstijl — we zorgen dat je herkend en onthouden wordt.
+                </p>
+              </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start">
-              <h3 className="text-2xl font-semibold text-[#272829] mb-4 flex items-center">📢 <span className="ml-2 text-[#61677A]">Reclame met resultaat</span></h3>
-              <p className="text-[#61677A] leading-relaxed text-lg">
-                Slimme campagnes die gezien worden. Online en offline reclame die jouw boodschap op het juiste moment bij de juiste mensen brengt.
-              </p>
+            <div className="group p-8 rounded-3xl shadow-xl bg-[#FFF6E0] transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col items-start relative overflow-hidden">
+              <img src="/socialmedia.jpg" alt="Social media" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+              <div className="relative z-10">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#272829] to-[#61677A] flex items-center justify-center text-white text-3xl mb-4">📢</div>
+                <h3 className="text-2xl font-semibold text-[#272829] mb-4">Reclame met resultaat</h3>
+                <p className="text-[#61677A] leading-relaxed text-lg">
+                  Slimme campagnes die gezien worden. Online en offline reclame die jouw boodschap op het juiste moment bij de juiste mensen brengt.
+                </p>
+              </div>
             </div>
           </div>
         </div>

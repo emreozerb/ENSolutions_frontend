@@ -2,12 +2,12 @@ import { MapPin, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
+    <footer className="bg-[#272829] border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           <div>
             <img
-              src="/EN solutions logo.png"
+              src="/Logo_Dark.png"
               alt="ENSolutions"
               className="w-40 mb-4 opacity-90"
             />
