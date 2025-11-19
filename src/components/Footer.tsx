@@ -28,7 +28,7 @@ export default function Footer() {
                 <span>ensolutionsbe@hotmail.com</span>
               </a>
               <a
-                href="https://maps.app.goo.gl/WCa8r4TysCpqNf3d9"
+                href="https://maps.app.goo.gl/h6CKHYYYQD186Dfd8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
