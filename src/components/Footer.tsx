@@ -1,4 +1,5 @@
 import { MapPin, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -27,7 +28,7 @@ export default function Footer() {
                 <span>ensolutionsbe@hotmail.com</span>
               </a>
               <a
-                href="https://maps.app.goo.gl/iymS8pvgwYjtzJss8"
+                href="https://maps.app.goo.gl/WCa8r4TysCpqNf3d9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
@@ -41,9 +42,31 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-normal mb-4">Diensten</h4>
             <ul className="space-y-2 text-sm text-gray-400">
-              <li>Websiteontwikkeling</li>
-              <li>Reclamevideo's</li>
-              <li>Bedrijfsbegeleiding</li>
+              <li>
+                <Link to="/services/foto-videografie" className="hover:text-white transition-colors">
+                  Foto & Videografie
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/webdesign" className="hover:text-white transition-colors">
+                  Webdesign
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/branding" className="hover:text-white transition-colors">
+                  Branding
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/sociaal-media" className="hover:text-white transition-colors">
+                  Sociaal Media Beheer
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/all-in-one" className="hover:text-white transition-colors">
+                  All-In-One
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

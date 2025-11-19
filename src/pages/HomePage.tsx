@@ -1,10 +1,30 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import ContactForm from '../components/ContactForm';
+import ContactButton from '../components/ContactButton';
 import Footer from '../components/Footer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function HomePage() {
   const [isVisible, setIsVisible] = useState(false);
+  const intro1 = useScrollAnimation();
+  const intro2 = useScrollAnimation();
+  const servicesTitle = useScrollAnimation();
+  const service1 = useScrollAnimation();
+  const service2 = useScrollAnimation();
+  const service3 = useScrollAnimation();
+  const service4 = useScrollAnimation();
+  const benefitsTitle = useScrollAnimation();
+  const benefit1 = useScrollAnimation();
+  const benefit2 = useScrollAnimation();
+  const benefit3 = useScrollAnimation();
+  const benefit4 = useScrollAnimation();
+  const workTitle = useScrollAnimation();
+  const step1 = useScrollAnimation();
+  const step2 = useScrollAnimation();
+  const step3 = useScrollAnimation();
+  const step4 = useScrollAnimation();
+  const step5 = useScrollAnimation();
+  const step6 = useScrollAnimation();
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 300);
@@ -37,7 +57,7 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-[#f8fafc]">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="opacity-0 animate-[fadeInLeft_1s_ease-out_0.3s_forwards]">
+            <div ref={intro1.elementRef} className={`scroll-animate-left ${intro1.isVisible ? 'visible' : ''}`}>
               <h2 className="text-3xl md:text-5xl font-light text-[#1a1a2e] mb-8">
                 Jouw partner in digitale groei
               </h2>
@@ -47,7 +67,7 @@ export default function HomePage() {
                 tillen we jouw bedrijf naar een hoger niveau.
               </p>
             </div>
-            <div className="opacity-0 animate-[fadeInRight_1s_ease-out_0.5s_forwards]">
+            <div ref={intro2.elementRef} className={`scroll-animate-right ${intro2.isVisible ? 'visible' : ''}`}>
               <img src="/office.jpg" alt="Office teamwork" className="w-full rounded-2xl shadow-2xl object-cover h-96 hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
@@ -57,11 +77,11 @@ export default function HomePage() {
       {/* Services Section */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light text-[#1a1a2e] mb-16 text-center opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
+          <h2 ref={servicesTitle.elementRef} className={`text-3xl md:text-5xl font-light text-[#1a1a2e] mb-16 text-center scroll-animate-up ${servicesTitle.isVisible ? 'visible' : ''}`}>
             Wat we doen
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden">
+            <div ref={service1.elementRef} className={`group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden scroll-animate-up ${service1.isVisible ? 'visible' : ''}`}>
               <img src="/photo-videography.jpg" alt="Photo and Videography" className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:opacity-10 transition-opacity duration-300" />
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#61677A] to-[#1a1a2e] flex items-center justify-center text-white text-3xl mb-4 shadow-lg">🎥</div>
@@ -71,7 +91,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden">
+            <div ref={service2.elementRef} className={`group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden scroll-animate-up ${service2.isVisible ? 'visible' : ''}`}>
               <img src="/webdesign.jpg" alt="Web design" className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:opacity-10 transition-opacity duration-300" />
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#61677A] to-[#1a1a2e] flex items-center justify-center text-white text-3xl mb-4 shadow-lg">💻</div>
@@ -81,7 +101,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden">
+            <div ref={service3.elementRef} className={`group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden scroll-animate-up ${service3.isVisible ? 'visible' : ''}`}>
               <img src="/branding.jpg" alt="Branding" className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:opacity-10 transition-opacity duration-300" />
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#61677A] to-[#1a1a2e] flex items-center justify-center text-white text-3xl mb-4 shadow-lg">🎨</div>
@@ -91,7 +111,7 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden">
+            <div ref={service4.elementRef} className={`group p-8 rounded-3xl shadow-xl bg-gradient-to-br from-white to-[#f8fafc] border border-[#61677A]/20 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#61677A]/40 flex flex-col items-start relative overflow-hidden scroll-animate-up ${service4.isVisible ? 'visible' : ''}`}>
               <img src="/socialmedia.jpg" alt="Social media" className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:opacity-10 transition-opacity duration-300" />
               <div className="relative z-10">
                 <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[#61677A] to-[#1a1a2e] flex items-center justify-center text-white text-3xl mb-4 shadow-lg">📢</div>
@@ -108,32 +128,32 @@ export default function HomePage() {
       {/* Benefits Section */}
       <section className="py-24 px-6 bg-gradient-to-b from-[#f8fafc] to-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light text-[#1a1a2e] mb-16 text-center opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
+          <h2 ref={benefitsTitle.elementRef} className={`text-3xl md:text-5xl font-light text-[#1a1a2e] mb-16 text-center scroll-animate-up ${benefitsTitle.isVisible ? 'visible' : ''}`}>
             Waarom met ons werken?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={benefit1.elementRef} className={`flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-left ${benefit1.isVisible ? 'visible' : ''}`}>
               <span className="text-[#61677A] text-2xl flex-shrink-0">✔</span>
               <div>
                 <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">Alles onder één dak</h3>
                 <p className="text-[#0f3460]">één partner, één visie, één resultaat</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={benefit2.elementRef} className={`flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-right ${benefit2.isVisible ? 'visible' : ''}`}>
               <span className="text-[#61677A] text-2xl flex-shrink-0">✔</span>
               <div>
                 <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">Persoonlijke aanpak</h3>
                 <p className="text-[#0f3460]">jouw doelen zijn onze missie</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={benefit3.elementRef} className={`flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-left ${benefit3.isVisible ? 'visible' : ''}`}>
               <span className="text-[#61677A] text-2xl flex-shrink-0">✔</span>
               <div>
                 <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">Bewezen resultaten</h3>
                 <p className="text-[#0f3460]">we laten bedrijven groeien, meetbaar en zichtbaar</p>
               </div>
             </div>
-            <div className="flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={benefit4.elementRef} className={`flex items-start space-x-4 p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-right ${benefit4.isVisible ? 'visible' : ''}`}>
               <span className="text-[#61677A] text-2xl flex-shrink-0">✔</span>
               <div>
                 <h3 className="text-xl font-semibold text-[#1a1a2e] mb-2">Modern en betrouwbaar</h3>
@@ -147,16 +167,16 @@ export default function HomePage() {
       {/* How We Work Section */}
       <section className="py-32 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light text-[#1a1a2e] mb-4 text-center opacity-0 animate-[fadeIn_1s_ease-out_0.2s_forwards]">
+          <h2 ref={workTitle.elementRef} className={`text-3xl md:text-5xl font-light text-[#1a1a2e] mb-4 text-center scroll-animate-up ${workTitle.isVisible ? 'visible' : ''}`}>
             Werken met ons? Zo simpel is het
           </h2>
-          <p className="text-xl text-[#0f3460] text-center mb-20 opacity-0 animate-[fadeIn_1s_ease-out_0.4s_forwards]">
+          <p className={`text-xl text-[#0f3460] text-center mb-20 scroll-animate-up ${workTitle.isVisible ? 'visible' : ''}`}>
             In enkele stappen naar jouw ideale oplossing
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* Step 1 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step1.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-left ${step1.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   1
@@ -171,7 +191,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 2 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step2.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-right ${step2.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   2
@@ -186,7 +206,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 3 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step3.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-left ${step3.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   3
@@ -201,7 +221,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 4 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step4.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-right ${step4.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   4
@@ -216,7 +236,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 5 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step5.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-left ${step5.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   5
@@ -231,7 +251,7 @@ export default function HomePage() {
             </div>
 
             {/* Step 6 */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <div ref={step6.elementRef} className={`p-6 rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] shadow-md border-l-4 border-[#61677A] hover:shadow-xl hover:scale-105 transition-all duration-300 scroll-animate-right ${step6.isVisible ? 'visible' : ''}`}>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-[#61677A] to-[#1a1a2e] text-white flex items-center justify-center font-semibold shadow-md">
                   6
@@ -248,7 +268,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactButton />
       <Footer />
     </div>
   );

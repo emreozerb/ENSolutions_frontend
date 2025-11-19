@@ -1,7 +1,18 @@
-import ContactForm from '../components/ContactForm';
+import ContactButton from '../components/ContactButton';
 import Footer from '../components/Footer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function AboutPage() {
+  const story = useScrollAnimation();
+  const team = useScrollAnimation();
+  const values = useScrollAnimation();
+  const value1 = useScrollAnimation();
+  const value2 = useScrollAnimation();
+  const value3 = useScrollAnimation();
+  const value4 = useScrollAnimation();
+  const value5 = useScrollAnimation();
+  const why = useScrollAnimation();
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -19,7 +30,7 @@ export default function AboutPage() {
       {/* Story Section */}
       <section className="py-32 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300">
+          <div ref={story.elementRef} className={`bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300 scroll-animate-up ${story.isVisible ? 'visible' : ''}`}>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
               Ons verhaal begon met één simpel idee: bedrijven verdienen visuele communicatie die écht werkt. Tijdens onze studies en de projecten die we ernaast uitvoerden, merkten we hoe vaak ondernemers worstelden met hun online zichtbaarheid, hun merkidentiteit of het creëren van sterke visuele content. We zagen kansen — en we besloten ze vast te grijpen.
             </p>
@@ -29,7 +40,7 @@ export default function AboutPage() {
           </div>
 
           {/* Team Section */}
-          <div className="bg-gradient-to-br from-gray-900 to-black text-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300">
+          <div ref={team.elementRef} className={`bg-gradient-to-br from-gray-900 to-black text-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300 scroll-animate-up ${team.isVisible ? 'visible' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-light mb-6">
               Een jong en gemotiveerd team
             </h2>
@@ -42,7 +53,7 @@ export default function AboutPage() {
           </div>
 
           {/* Values Section */}
-          <div className="bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300">
+          <div ref={values.elementRef} className={`bg-white p-8 md:p-12 rounded-2xl shadow-lg mb-20 hover:shadow-2xl transition-shadow duration-300 scroll-animate-up ${values.isVisible ? 'visible' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-light text-black mb-8">
               Waar wij voor staan
             </h2>
@@ -51,27 +62,27 @@ export default function AboutPage() {
             </p>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300">
+              <div ref={value1.elementRef} className={`border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300 scroll-animate-left ${value1.isVisible ? 'visible' : ''}`}>
                 <h3 className="text-xl font-semibold text-black mb-2">Betrouwbaarheid</h3>
                 <p className="text-gray-600">We zeggen wat we doen en we doen wat we zeggen.</p>
               </div>
 
-              <div className="border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300">
+              <div ref={value2.elementRef} className={`border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300 scroll-animate-right ${value2.isVisible ? 'visible' : ''}`}>
                 <h3 className="text-xl font-semibold text-black mb-2">Transparante communicatie</h3>
                 <p className="text-gray-600">Jij weet altijd waar we staan, wat we doen en waarom.</p>
               </div>
 
-              <div className="border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300">
+              <div ref={value3.elementRef} className={`border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300 scroll-animate-left ${value3.isVisible ? 'visible' : ''}`}>
                 <h3 className="text-xl font-semibold text-black mb-2">Kwaliteit boven alles</h3>
                 <p className="text-gray-600">Geen half werk, geen 'goed genoeg', maar resultaat waar jij trots op kan zijn.</p>
               </div>
 
-              <div className="border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300">
+              <div ref={value4.elementRef} className={`border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300 scroll-animate-right ${value4.isVisible ? 'visible' : ''}`}>
                 <h3 className="text-xl font-semibold text-black mb-2">Creativiteit & innovatie</h3>
                 <p className="text-gray-600">We zoeken altijd naar de meest originele én effectieve oplossing.</p>
               </div>
 
-              <div className="border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300">
+              <div ref={value5.elementRef} className={`border-l-4 border-black pl-6 hover:border-gray-600 hover:scale-105 transition-all duration-300 scroll-animate-left ${value5.isVisible ? 'visible' : ''}`}>
                 <h3 className="text-xl font-semibold text-black mb-2">Samenwerking</h3>
                 <p className="text-gray-600">We bouwen niet voor jou, maar met jou. Jouw input is goud waard.</p>
               </div>
@@ -79,7 +90,7 @@ export default function AboutPage() {
           </div>
 
           {/* Why Section */}
-          <div className="bg-gradient-to-br from-gray-100 to-white p-8 md:p-12 rounded-2xl shadow-lg">
+          <div ref={why.elementRef} className={`bg-gradient-to-br from-gray-100 to-white p-8 md:p-12 rounded-2xl shadow-lg scroll-animate-up ${why.isVisible ? 'visible' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-light text-black mb-6">
               Waarom we dit doen
             </h2>
@@ -96,7 +107,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactButton />
       <Footer />
     </div>
   );

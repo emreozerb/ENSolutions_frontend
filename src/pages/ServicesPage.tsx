@@ -1,8 +1,15 @@
 import { Link } from 'react-router-dom';
-import ContactForm from '../components/ContactForm';
+import ContactButton from '../components/ContactButton';
 import Footer from '../components/Footer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function ServicesPage() {
+  const service1 = useScrollAnimation();
+  const service2 = useScrollAnimation();
+  const service3 = useScrollAnimation();
+  const service4 = useScrollAnimation();
+  const service5 = useScrollAnimation();
+
   const services = [
     {
       id: 'foto-videografie',
@@ -54,28 +61,33 @@ export default function ServicesPage() {
       <section className="py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {services.map((service) => (
-              <Link
-                key={service.id}
-                to={service.link}
-                className="group p-8 rounded-3xl bg-white border-2 border-[#61677A]/20 shadow-lg hover:shadow-2xl hover:border-[#61677A]/50 transition-all duration-300 hover:-translate-y-3 hover:scale-105"
-              >
-                <h3 className="text-2xl font-semibold text-[#1a1a2e] mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-[#0f3460] leading-relaxed mb-6">
-                  {service.shortDesc}
-                </p>
-                <span className="inline-block text-[#61677A] font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                  Meer informatie →
-                </span>
-              </Link>
-            ))}
+            {services.map((service, index) => {
+              const animations = [service1, service2, service3, service4, service5];
+              const animation = animations[index];
+              return (
+                <Link
+                  key={service.id}
+                  to={service.link}
+                  ref={animation.elementRef}
+                  className={`group p-8 rounded-3xl bg-white border-2 border-[#61677A]/20 shadow-lg hover:shadow-2xl hover:border-[#61677A]/50 transition-all duration-300 hover:-translate-y-3 hover:scale-105 scroll-animate-up ${animation.isVisible ? 'visible' : ''}`}
+                >
+                  <h3 className="text-2xl font-semibold text-[#1a1a2e] mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-[#0f3460] leading-relaxed mb-6">
+                    {service.shortDesc}
+                  </p>
+                  <span className="inline-block text-[#61677A] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                    Meer informatie →
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <ContactForm />
+      <ContactButton />
       <Footer />
     </div>
   );
